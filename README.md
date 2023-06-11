@@ -7,8 +7,7 @@ In order to implement this project in Vue + Vite environment, I had to install t
 By installing only the npm dependencies some bugs surfaced during the creation of the project.
 This was my personal resolution.
 
-⚠️Please Note:
-Below I report precious information, I thank all the community that works for an open source world🍀:
+⚠️Below I report precious information, I thank all the community that works for an open source world🍀:
 
 https://www.npmjs.com/package/@vue-leaflet/vue-leaflet?activeTab=readme
 
