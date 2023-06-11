@@ -1,12 +1,13 @@
 
 ## Inizialize a Vue3 + Vite project
+(commit: setting Vue3 + vite project)
 
 ⚠️ The Essential Vue project extensions:
 
 Vue Language Features (Volar) [Visual Studio Code]
 Vue.js devtools [ Chrome ] https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
 
-# commit: setting Vue3 + vite project
+
 after cloning the repo open the terminal from VSC and type: npm create vite@latest . -- --template vue
 
 to view always from the terminal: npm i && npm run dev
@@ -20,6 +21,21 @@ in the 'src' folder --> create 'assets' folder --> create app.scss file
 Install the SASS package from the terminal: npm add -D sass
 
 install Bootstrap: npm i bootstrap @popperjs/core (@popperjs/core these are two libraries that allow you to use Bootstrap 100%)
+
+
+## Inizialize Vue Leaflet project
+(commit: install vue leaflet)
+
+- Installations:
+npm install @vue-leaflet/vue-leaflet
+npm install leaflet
+
+- CDN
+Import the CDN dependencies into the index.html file: 
+<!-- CDN link Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 
 # Vue 3 + Vite
 
