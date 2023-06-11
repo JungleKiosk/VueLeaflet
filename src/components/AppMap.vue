@@ -53,7 +53,7 @@ export default {
   
 <template>
     <div class="container">
-        <h1 class="text-center">Hello Vue Leaflet</h1>
+        <h1 class="text-center p-5">Hello Vue Leaflet</h1>
         <h4 class="text-center">A tour in Germany</h4>
         <div class="row">
             <div :class="mapColumnClass" >
@@ -86,8 +86,8 @@ export default {
                 <div v-if="selectedMarker">
                     <div class="marker_card">
                         <div class="row justify-content-end ">
-                            <div class="col-2">
-                                <button class=" btn-close close_button py-2" @click="closeMarkerCard"></button>
+                            <div class="col-2 py-2">
+                                <button class=" btn-close close_button" @click="closeMarkerCard"></button>
                             </div>
                         </div>
                         <div class="row align-items-center row_images">
@@ -98,7 +98,7 @@ export default {
                             </div>
                             
                         </div>
-                        <div class="col-12 col-lg-12 align-items-center">
+                        <div class="col-12 col-lg-12 col-md-12">
                             <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class=" rounded-5" />
                         </div>
                     </div>
