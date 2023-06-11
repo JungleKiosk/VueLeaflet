@@ -1,6 +1,6 @@
 
 <script>
-import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LMarker, LTooltip, LPopup } from "@vue-leaflet/vue-leaflet";
 
 export default {
     props: {
@@ -13,7 +13,8 @@ export default {
         LMap,
         LTileLayer,
         LMarker,
-        LTooltip
+        LTooltip,
+        LPopup
     },
     data() {
         return {
@@ -44,6 +45,13 @@ export default {
                         <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
                     </div>
                 </l-tooltip>
+                <l-popup>
+                    <div>
+                        <!-- <p>id: {{ coordinate.id }}</p> -->
+                        <p>City: {{ coordinate.city }}</p>
+                        <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
+                    </div>
+                </l-popup>
             </l-marker>
 
         </template>
