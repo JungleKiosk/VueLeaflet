@@ -22,7 +22,7 @@ export default {
             attribution:
                 '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             zoom: 15,
-            center: [49.410579, 8.715369],
+            center: [49.411905, 8.728353],
             selectedMarker: null
         };
     },
@@ -38,9 +38,13 @@ export default {
         },
         closeMarkerCard() {
             this.selectedMarker = null;
-        }
+        },
+    },
+    computed: {
+        mapColumnClass() {
+            return this.selectedMarker ? 'col-12 col-lg-6' : 'col-12 col-lg-12';
+        },
     }
-
 }
 
 
@@ -51,10 +55,10 @@ export default {
     <div class="container">
         <h1 class="text-center">Hello Vue Leaflet</h1>
         <div class="row">
-            <div class="col-6 col-lg-6">
+            <div :class="mapColumnClass">
                 <l-map style="height: 600px" :zoom="zoom" :center="center">
                     <l-tile-layer :url="url_osm" :attribution="attribution"></l-tile-layer>
-            
+
                     <template v-for="(coordinate, index) in marker_points" :key="index">
                         <l-marker :lat-lng="[coordinate.lat, coordinate.long]" @click="selectMarker(coordinate)">
                             <l-tooltip>
@@ -87,12 +91,15 @@ export default {
                         </div>
                         <div class="row">
                             <p>Images</p>
-                            <div class="col-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
+                            <div class="col-3 col-lg-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
                                 @click="selectImage(image)">
-                                <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" />
+                                <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid rounded-3" />
                             </div>
+                            <div class="col-12 col-lg-12">
+                                <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class=" rounded-5" />
+                            </div>
+                           
                         </div>
-                        <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class="mt-3" />
                     </div>
                 </div>
             </div>
@@ -100,5 +107,4 @@ export default {
         <!-- /.row -->
     </div>
     <!-- /.container -->
-
 </template>
