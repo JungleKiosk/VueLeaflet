@@ -48,52 +48,57 @@ export default {
   
   
 <template>
-    <h1 class="text-center">Hello Vue Leaflet</h1>
-    <l-map style="height: 600px" :zoom="zoom" :center="center">
-        <l-tile-layer :url="url_osm" :attribution="attribution"></l-tile-layer>
-
-        <template v-for="(coordinate, index) in marker_points" :key="index">
-            <l-marker :lat-lng="[coordinate.lat, coordinate.long]" @click="selectMarker(coordinate)">
-                <l-tooltip>
-                    <div>
-                        <!-- <p>id: {{ coordinate.id }}</p> -->
-                        <p>{{ coordinate.city }}</p>
-                        <p>{{ coordinate.lat }} , {{ coordinate.long }}</p>
-                    </div>
-                </l-tooltip>
-                <l-popup>
-                    <div>
-                        <!-- <p>id: {{ coordinate.id }}</p> -->
-                        <p>City: {{ coordinate.city }}</p>
-                        <img :src="getImagePath(coordinate.img_popup)" alt="City image: castle or river" />
-                        <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
-                    </div>
-                </l-popup>
-            </l-marker>
-
-
-
-        </template>
-
-    </l-map>
-
-    <div class="col-12 col-lg-4">
-        <div v-if="selectedMarker">
-            <div class="marker_card">
-                <div class="row justify-content-end">
-                    <div class="col-2">
-                        <button class=" btn-close close_button " @click="closeMarkerCard"></button>
+    <div class="container">
+        <h1 class="text-center">Hello Vue Leaflet</h1>
+        <div class="row">
+            <div class="col-6 col-lg-6">
+                <l-map style="height: 600px" :zoom="zoom" :center="center">
+                    <l-tile-layer :url="url_osm" :attribution="attribution"></l-tile-layer>
+            
+                    <template v-for="(coordinate, index) in marker_points" :key="index">
+                        <l-marker :lat-lng="[coordinate.lat, coordinate.long]" @click="selectMarker(coordinate)">
+                            <l-tooltip>
+                                <div>
+                                    <!-- <p>id: {{ coordinate.id }}</p> -->
+                                    <p>{{ coordinate.city }}</p>
+                                    <p>{{ coordinate.lat }} , {{ coordinate.long }}</p>
+                                </div>
+                            </l-tooltip>
+                            <l-popup>
+                                <div>
+                                    <!-- <p>id: {{ coordinate.id }}</p> -->
+                                    <p>City: {{ coordinate.city }}</p>
+                                    <img :src="getImagePath(coordinate.img_popup)" alt="City image: castle or river" />
+                                    <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
+                                </div>
+                            </l-popup>
+                        </l-marker>
+                    </template>
+                </l-map>
+            </div>
+            <!-- /.col-6 col-lg-6 -->
+            <div class="col-12 col-lg-4">
+                <div v-if="selectedMarker">
+                    <div class="marker_card">
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <button class=" btn-close close_button " @click="closeMarkerCard"></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>Images</p>
+                            <div class="col-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
+                                @click="selectImage(image)">
+                                <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" />
+                            </div>
+                        </div>
+                        <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class="mt-3" />
                     </div>
                 </div>
-                <div class="row">
-                    <p>Images</p>
-                    <div class="col-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
-                        @click="selectImage(image)">
-                        <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" />
-                    </div>
-                </div>
-                <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class="mt-3" />
             </div>
         </div>
+        <!-- /.row -->
     </div>
+    <!-- /.container -->
+
 </template>
