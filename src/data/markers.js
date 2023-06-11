@@ -6,11 +6,11 @@ export const marker_points = [
         long: 11.076206,
         img_popup: "",
         img_marker_card:
-        [
-            { img_card: "" },
-            { img_card: "" },
-            { img_card: "" }
-        ]
+            [
+                { img_card: "" },
+                { img_card: "" },
+                { img_card: "" }
+            ]
     },
     {
         id: 1,
@@ -19,11 +19,12 @@ export const marker_points = [
         long: 8.715369,
         img_popup: "heidelberg/heid_castle.jpg",
         img_marker_card:
-        [
-            { img_card: "" },
-            { img_card: "" },
-            { img_card: "" }
-        ]
+            [
+                { img_card: "heidelberg/heid_castle.jpg" },
+                { img_card: "heidelberg/heid_castle2.jpg" },
+                { img_card: "heidelberg/heid_castle3.jpg" },
+                { img_card: "heidelberg/heid_castle4.jpg" }
+            ]
     },
     {
         id: 2,

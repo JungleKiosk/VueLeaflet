@@ -22,7 +22,8 @@ export default {
             attribution:
                 '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             zoom: 15,
-            center: [49.410579, 8.715369,],
+            center: [49.410579, 8.715369],
+            selectedMarker: null
         };
     },
     methods: {
@@ -32,6 +33,12 @@ export default {
         selectMarker: function (marker) {
             this.selectedMarker = marker;
         },
+        selectImage(image) {
+            this.selectedMarker.img_popup = image.img_card;
+        },
+        closeMarkerCard() {
+            this.selectedMarker = null;
+        }
     }
 
 }
@@ -50,8 +57,8 @@ export default {
                 <l-tooltip>
                     <div>
                         <!-- <p>id: {{ coordinate.id }}</p> -->
-                        <p>City: {{ coordinate.city }}</p>
-                        <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
+                        <p>{{ coordinate.city }}</p>
+                        <p>{{ coordinate.lat }} , {{ coordinate.long }}</p>
                     </div>
                 </l-tooltip>
                 <l-popup>
@@ -64,7 +71,29 @@ export default {
                 </l-popup>
             </l-marker>
 
+
+
         </template>
 
     </l-map>
+
+    <div class="col-12 col-lg-4">
+        <div v-if="selectedMarker">
+            <div class="marker_card">
+                <div class="row justify-content-end">
+                    <div class="col-2">
+                        <button class=" btn-close close_button " @click="closeMarkerCard"></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>Images</p>
+                    <div class="col-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
+                        @click="selectImage(image)">
+                        <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" />
+                    </div>
+                </div>
+                <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class="mt-3" />
+            </div>
+        </div>
+    </div>
 </template>
