@@ -20,3 +20,4 @@ export default {
     <AppMap :marker_points="marker_points"></AppMap>
   </div>
 </template>
+

@@ -17,7 +17,7 @@ export const marker_points = [
         city: "Heidelberg",
         lat: 49.410579,
         long: 8.715369,
-        img_popup: "",
+        img_popup: "heidelberg/heid_castle.jpg",
         img_marker_card:
         [
             { img_card: "" },
