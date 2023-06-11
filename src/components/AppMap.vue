@@ -56,8 +56,8 @@ export default {
         <h1 class="text-center">Hello Vue Leaflet</h1>
         <h4 class="text-center">A tour in Germany</h4>
         <div class="row">
-            <div :class="mapColumnClass">
-                <l-map style="height: 800px" :zoom="zoom" :center="center">
+            <div :class="mapColumnClass" >
+                <l-map style="height: 800px;" :zoom="zoom" :center="center">
                     <l-tile-layer :url="url_osm" :attribution="attribution"></l-tile-layer>
 
                     <template v-for="(coordinate, index) in marker_points" :key="index">
@@ -82,24 +82,24 @@ export default {
                 </l-map>
             </div>
             <!-- /.col-6 col-lg-6 -->
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-6">
                 <div v-if="selectedMarker">
                     <div class="marker_card">
-                        <div class="row justify-content-end">
+                        <div class="row justify-content-end ">
                             <div class="col-2">
-                                <button class=" btn-close close_button " @click="closeMarkerCard"></button>
+                                <button class=" btn-close close_button py-2" @click="closeMarkerCard"></button>
                             </div>
                         </div>
-                        <div class="row align-items-center">
+                        <div class="row align-items-center row_images">
                             <p>Images</p>
-                            <div class="col-3 col-lg-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
+                            <div class="col-3 col-lg-3 " v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
                                 @click="selectImage(image)">
-                                <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid rounded-3" />
+                                <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid rounded-5 img_slider" />
                             </div>
-                            <div class="col-12 col-lg-12">
-                                <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class=" rounded-5" />
-                            </div>
-                           
+                            
+                        </div>
+                        <div class="col-12 col-lg-12 align-items-center">
+                            <img :src="getImagePath(selectedMarker.img_popup)" alt="Marker Image" class=" rounded-5" />
                         </div>
                     </div>
                 </div>
