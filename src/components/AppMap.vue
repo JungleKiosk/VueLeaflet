@@ -1,6 +1,6 @@
 
 <script>
-import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
 
 export default {
     props: {
@@ -12,7 +12,8 @@ export default {
     components: {
         LMap,
         LTileLayer,
-        LMarker
+        LMarker,
+        LTooltip
     },
     data() {
         return {
@@ -36,7 +37,13 @@ export default {
 
         <template v-for="(coordinate, index) in marker_points" :key="index">
             <l-marker :lat-lng="[coordinate.lat, coordinate.long]">
-
+                <l-tooltip>
+                    <div>
+                        <!-- <p>id: {{ coordinate.id }}</p> -->
+                        <p>City: {{ coordinate.city }}</p>
+                        <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
+                    </div>
+                </l-tooltip>
             </l-marker>
 
         </template>
