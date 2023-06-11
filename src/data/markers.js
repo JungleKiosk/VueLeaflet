@@ -4,12 +4,13 @@ export const marker_points = [
         city: "Nürnberg",
         lat: 49.457679,
         long: 11.076206,
-        img_popup: "",
+        img_popup: "nurnberg/nurn_castle.jpg",
         img_marker_card:
             [
-                { img_card: "" },
-                { img_card: "" },
-                { img_card: "" }
+                { img_card: "nurnberg/nurn_castle.jpg" },
+                { img_card: "nurnberg/nurn_castle2.jpg" },
+                { img_card: "nurnberg/nurn_castle3.PNG" },
+                { img_card: "nurnberg/nurn_river.PNG" }
             ]
     },
     {
@@ -31,7 +32,7 @@ export const marker_points = [
         city: "Frankfurt",
         lat: 50.107314,
         long: 8.682411,
-        img_popup: "",
+        img_popup: "frankfurt/fran_euro_yard.jpg",
         img_marker_card:
             [
                 { img_card: "" },
@@ -44,12 +45,13 @@ export const marker_points = [
         city: "Cologne",
         lat: 50.938457,
         long: 6.968436,
-        img_popup: "",
+        img_popup: "koln/koln_bridge.jpg",
         img_marker_card:
             [
-                { img_card: "" },
-                { img_card: "" },
-                { img_card: "" }
+                { img_card: "koln/koln_bridge.jpg"},
+                { img_card: "koln/koln_river.jpg" },
+                { img_card: "koln/koln_river2.jpg" },
+                { img_card: "koln/koln_river3.jpg" }
             ]
     },
     {
@@ -57,12 +59,13 @@ export const marker_points = [
         city: "Düsseldorf",
         lat: 51.225448,
         long: 6.779572,
-        img_popup: "",
+        img_popup: "dusseldorf/duss_library.jpg",
         img_marker_card:
             [
-                { img_card: "" },
-                { img_card: "" },
-                { img_card: "" }
+                { img_card: "dusseldorf/duss_library.jpg" },
+                { img_card: "dusseldorf/duss_library2.jpg" },
+                { img_card: "dusseldorf/duss_library3.jpg" },
+                { img_card: "dusseldorf/duss_river.jpg" }
             ]
     },
     {
@@ -70,12 +73,13 @@ export const marker_points = [
         city: "Bonn",
         lat: 50.668294,
         long: 7.206739,
-        img_popup: "",
+        img_popup: "bonn/bonn_castle.jpg",
         img_marker_card:
             [
-                { img_card: "" },
-                { img_card: "" },
-                { img_card: "" }
+                { img_card: "bonn/bonn_castle.jpg" },
+                { img_card: "bonn/bonn_castle2.jpg" },
+                { img_card: "bonn/bonn_museum.jpg" },
+                { img_card: "bonn/bonn_beethoven.jpg" }
             ]
     },
 ];

@@ -21,8 +21,8 @@ export default {
             url_osm: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution:
                 '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            zoom: 15,
-            center: [49.411905, 8.728353],
+            zoom: 7,
+            center: [50.830271, 12.915456],
             selectedMarker: null
         };
     },
@@ -54,9 +54,10 @@ export default {
 <template>
     <div class="container">
         <h1 class="text-center">Hello Vue Leaflet</h1>
+        <h4 class="text-center">A tour in Germany</h4>
         <div class="row">
             <div :class="mapColumnClass">
-                <l-map style="height: 600px" :zoom="zoom" :center="center">
+                <l-map style="height: 800px" :zoom="zoom" :center="center">
                     <l-tile-layer :url="url_osm" :attribution="attribution"></l-tile-layer>
 
                     <template v-for="(coordinate, index) in marker_points" :key="index">
@@ -89,7 +90,7 @@ export default {
                                 <button class=" btn-close close_button " @click="closeMarkerCard"></button>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row align-items-center">
                             <p>Images</p>
                             <div class="col-3 col-lg-3" v-for="(image, index) in selectedMarker.img_marker_card" :key="index"
                                 @click="selectImage(image)">
