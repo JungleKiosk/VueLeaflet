@@ -35,9 +35,10 @@ export const marker_points = [
         img_popup: "frankfurt/fran_euro_yard.jpg",
         img_marker_card:
             [
-                { img_card: "" },
-                { img_card: "" },
-                { img_card: "" }
+                { img_card: "frankfurt/fran_euro_yard.jpg" },
+                { img_card: "frankfurt/fran_river.PNG" },
+                { img_card: "frankfurt/fran_river2.PNG" },
+                { img_card: "frankfurt/fran_river3.PNG" }
             ]
     },
     {

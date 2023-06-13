@@ -21,8 +21,8 @@ export default {
             url_osm: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution:
                 '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            zoom: 7,
-            center: [50.830271, 12.915456],
+            zoom: 5,
+            center: [57.701834, 11.963458],
             selectedMarker: null
         };
     },
@@ -64,18 +64,18 @@ export default {
                                 <p>{{ coordinate.lat }} , {{ coordinate.long }}</p>
                             </div>
                         </l-tooltip>
-                        <l-popup>
+                        <l-popup class="popup">
                             <div>
                                 <!-- <p>id: {{ coordinate.id }}</p> -->
-                                <p>City: {{ coordinate.city }}</p>
-                                <div class="row">
+                                <p class="p-1">City: {{ coordinate.city }}</p>
+                                <div class="row align-items-center row_images">
                                     <div class="col-3 img_slider" v-for="(image, imageIndex) in coordinate.img_marker_card"
                                         :key="imageIndex">
                                         <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" @click="selectImage(image)"/>
                                     </div>
                                 </div>
-                                <img :src="getImagePath(selectedMarker?.img_popup)" alt="City image: castle or river" />
-                                <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
+                                <img class="p-2 rounded-5" :src="getImagePath(selectedMarker?.img_popup)" alt="City image: castle or river" />
+                                <p class="py-1">Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
                             </div>
                         </l-popup>
                     </l-marker>
