@@ -69,12 +69,12 @@ export default {
                                 <!-- <p>id: {{ coordinate.id }}</p> -->
                                 <p>City: {{ coordinate.city }}</p>
                                 <div class="row">
-                                    <div class="col-3" v-for="(image, imageIndex) in coordinate.img_marker_card"
+                                    <div class="col-3 img_slider" v-for="(image, imageIndex) in coordinate.img_marker_card"
                                         :key="imageIndex">
-                                        <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid"/>
+                                        <img :src="getImagePath(image.img_card)" :alt="image.img_card" class="img-fluid" @click="selectImage(image)"/>
                                     </div>
                                 </div>
-                                <img :src="getImagePath(coordinate.img_popup)" alt="City image: castle or river" />
+                                <img :src="getImagePath(selectedMarker?.img_popup)" alt="City image: castle or river" />
                                 <p>Coordinates: {{ coordinate.lat }} , {{ coordinate.long }}</p>
                             </div>
                         </l-popup>
