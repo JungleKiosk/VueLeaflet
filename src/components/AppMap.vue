@@ -22,7 +22,7 @@ export default {
             attribution:
                 '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             zoom: 5,
-            center: [57.701834, 11.963458],
+            center: [49.411761, 8.716934],
             selectedMarker: null
         };
     },
